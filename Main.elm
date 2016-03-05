@@ -1,10 +1,10 @@
 module Main (..) where
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Signal exposing (..)
-import Time exposing (..)
-import Date exposing (..)
+import Html exposing (Html, div, a, text)
+import Html.Attributes exposing (class, classList, style, href, target)
+import Signal exposing (map)
+import Time exposing (every, second)
+import Date exposing (Date, fromTime, hour, minute, second)
 import String exposing (padLeft)
 
 
@@ -42,25 +42,36 @@ view d =
           ]
       , div
           [ class "footer" ]
-          [ text "A "
-          , a
-              [ href "https://en.wikipedia.org/wiki/Web_colors#Hex_triplet"
-              , target "_blank"
+          [ div
+              [ class "footer-left" ]
+              [ a
+                  [ href "https://en.wikipedia.org/wiki/Web_colors#Hex_triplet"
+                  , target "_blank"
+                  ]
+                  [ text "Hexclock" ]
+              , text " in "
+              , a
+                  [ href "http://elm-lang.org"
+                  , target "_blank"
+                  ]
+                  [ text "elm" ]
+              , text " by "
+              , a
+                  [ href "https://twitter.com/irrwitz"
+                  , class "button"
+                  , target "_blank"
+                  ]
+                  [ text "@irrwitz. " ]
               ]
-              [ text "hexclock" ]
-          , text " in "
-          , a
-              [ href "http://elm-lang.org"
-              , target "_blank"
+          , div
+              [ class "footer-right" ]
+              [ a
+                  [ href "https://github.com/irrwitz/hexclock"
+                  , class "right"
+                  , target "_blank"
+                  ]
+                  [ text "Source" ]
               ]
-              [ text "elm" ]
-          , text " by "
-          , a
-              [ href "https://twitter.com/irrwitz"
-              , class "button"
-              , target "_blank"
-              ]
-              [ text "@irrwitz" ]
           ]
       ]
 

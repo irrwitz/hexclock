@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "A clock where with each second the background color is changed",
-    "repository": "https://github.com/user/project.git",
+    "repository": "https://github.com/irrwitz/hexclock.git",
     "license": "BSD3",
     "source-directories": [
         "."

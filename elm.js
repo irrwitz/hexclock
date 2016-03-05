@@ -10521,16 +10521,28 @@ Elm.Main.make = function (_elm) {
               _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("time")]),_U.list([$Html.text(colorFormat(d))]))]))
               ,A2($Html.div,
               _U.list([$Html$Attributes.$class("footer")]),
-              _U.list([$Html.text("A ")
-                      ,A2($Html.a,
-                      _U.list([$Html$Attributes.href("https://en.wikipedia.org/wiki/Web_colors#Hex_triplet"),$Html$Attributes.target("_blank")]),
-                      _U.list([$Html.text("hexclock")]))
-                      ,$Html.text(" in ")
-                      ,A2($Html.a,_U.list([$Html$Attributes.href("http://elm-lang.org"),$Html$Attributes.target("_blank")]),_U.list([$Html.text("elm")]))
-                      ,$Html.text(" by ")
-                      ,A2($Html.a,
-                      _U.list([$Html$Attributes.href("https://twitter.com/irrwitz"),$Html$Attributes.$class("button"),$Html$Attributes.target("_blank")]),
-                      _U.list([$Html.text("@irrwitz")]))]))]));
+              _U.list([A2($Html.div,
+                      _U.list([$Html$Attributes.$class("footer-left")]),
+                      _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://en.wikipedia.org/wiki/Web_colors#Hex_triplet"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Hexclock")]))
+                              ,$Html.text(" in ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://elm-lang.org"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("elm")]))
+                              ,$Html.text(" by ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://twitter.com/irrwitz")
+                                      ,$Html$Attributes.$class("button")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("@irrwitz. ")]))]))
+                      ,A2($Html.div,
+                      _U.list([$Html$Attributes.$class("footer-right")]),
+                      _U.list([A2($Html.a,
+                      _U.list([$Html$Attributes.href("https://github.com/irrwitz/hexclock")
+                              ,$Html$Attributes.$class("right")
+                              ,$Html$Attributes.target("_blank")]),
+                      _U.list([$Html.text("Source")]))]))]))]));
    };
    var dateTime = A2($Signal.map,$Date.fromTime,$Time.every($Time.second));
    var main = A2($Signal.map,view,dateTime);
